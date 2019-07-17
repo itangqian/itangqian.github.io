@@ -4,10 +4,10 @@
 #baseurl: https://comsince.github.io
 url: https://itangqian.github.io
 date_format: "ordinal"
-title: leaf
+title: candy
 subtitle: "学无止境"
 description: "学无止境"
-keywords: leaf
+keywords: candy
 favicon: /favicon.ico
 timezone: Asia/Chongqing
 encoding: "utf-8"
@@ -16,7 +16,7 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: leaf
+author: candy
 organization: 
 organization_url: 
 location: Chongqing, China
