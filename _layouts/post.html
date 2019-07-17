@@ -16,9 +16,19 @@ layout: default
           {% for cat in page.categories %}
           <span class="meta-info">
             <span class="octicon octicon-file-directory"></span>
-            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+            <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
           </span>
           {% endfor %}
+
+          <span name="post" id="{{ site.url }}{{ page.url }}" class="leancloud_visitors meta_data_item" data-flag-title="{{ page.title }}">
+            <span class="post-meta-item-icon">
+             <span class="octicon octicon-eye"></span>
+            </span>
+            <span class="old-visitors-count" style="display: none;">{{post.views|first}}</span>
+            <span class="leancloud-visitors-count"></span>
+            <span class="post-meta-item-text">次浏览</span>
+          </span>
+
         </div>
       </div>
     </div>
@@ -32,16 +42,15 @@ layout: default
     <article class="article-content markdown-body">
     {{ content }}
     </article>
-    <div class="share">
-      {% include sns-share.html %}
-    </div>
+    <!--<div class="share">-->
+      <!--{% include sns-share.html %}-->
+    <!--</div>-->
     <div class="comment">
       {% include comments.html %}
     </div>
   </div>
   <div class="column one-fourth">
     {% include sidebar-search.html %}
-    {% include sidebar-qrcode.html %}
     {% include sidebar-post-nav.html %}
   </div>
 </div>

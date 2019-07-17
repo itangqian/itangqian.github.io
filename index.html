@@ -15,12 +15,6 @@ comments: false
                         <span class="octicon octicon-location"></span>
                         {{ site.location }}
                     </span>
-                    {% if site.organization %}
-                    <span class="meta-info">
-                        <span class="octicon octicon-organization"></span>
-                        <a href="{{ site.organization_url }}" target="_blank">{{ site.organization }}</a>
-                    </span>
-                    {% endif %}
                      <span class="meta-info">
                         <span class="octicon octicon-mark-github"></span>
                         <a href="https://github.com/{{ site.github_username }}" target="_blank">{{ site.github_username }}</a>
@@ -38,7 +32,7 @@ comments: false
                 {% for post in paginator.posts %}
                 <li class="repo-list-item">
                     <h3 class="repo-list-name">
-                      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                      <a href="{{ post.url }}">{{ post.title }}</a>
                     </h3>
                     <p class="repo-list-description">
                         {{ post.excerpt | strip_html | strip }}
@@ -47,12 +41,23 @@ comments: false
                         <span class="meta-info">
                           <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
                         </span>
+
                         {% for cat in post.categories %}
                         <span class="meta-info">
                           <span class="octicon octicon-file-directory"></span>
-                          <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+                          <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
                         </span>
                         {% endfor %}
+
+                        <span name="index" id="{{ site.url }}{{ post.url }}" class="leancloud_visitors meta_data_item" data-flag-title="{{ post.title }}">
+                             <span class="post-meta-item-icon">
+                               <span class="octicon octicon-eye"></span>
+                             </span>
+                             <span class="old-visitors-count" style="display: none;">{{post.views|first}}</span>
+                             <span class="leancloud-visitors-count"></span>
+                             <span class="post-meta-item-text">次浏览</span>
+                        </span>
+
                     </p>
                 </li>
                 {% endfor %}
@@ -60,7 +65,6 @@ comments: false
         </div>
         <div class="column one-third">
             {% include sidebar-search.html %}
-            {% include sidebar-qrcode.html %}
             {% include sidebar-popular-repo.html %}
         </div>
     </div>
@@ -68,9 +72,10 @@ comments: false
       <div class="btn-group">
         {% if paginator.previous_page %}
           {% if paginator.previous_page == 1 %}
-              <a href="{{ site.url }}/" class="btn btn-outline">&laquo;</a>
+              <a href="/" class="btn btn-outline">&laquo;</a>
           {% else %}
-              <a href="{{ site.url }}/page{{paginator.previous_page}}"  class="btn btn-outline">&laquo;</a>
+              <!--<a href="/page{{paginator.previous_page}}"  class="btn btn-outline">&laquo;</a>-->
+			  <a href="{{ site.paginate_path | replace: ':num', paginator.previous_page }}" class="btn btn-outline">&laquo;</a>
           {% endif %}
         {% else %}
             <button disabled="disabled" href="javascript:;" class="btn btn-outline">&laquo;</button>
@@ -78,17 +83,19 @@ comments: false
         {% if paginator.page == 1 %}
             <a href="javascript:;" class="active btn btn-outline">1</a>
         {% else %}
-            <a href="{{ site.url }}/"  class="btn btn-outline">1</a>
+            <a href="/"  class="btn btn-outline">1</a>
         {% endif %}
         {% for count in (2..paginator.total_pages) %}
           {% if count == paginator.page %}
               <a href="javascript:;"  class="active btn btn-outline">{{count}}</a>
           {% else %}
-              <a href="{{ site.url }}/page{{count}}"  class="btn btn-outline">{{count}}</a>
+             <!--<a href="/blog-page{{count}}"  class="btn btn-outline">{{count}}</a>-->
+             <a href="{{ site.paginate_path | replace: ':num', count }}" class="btn btn-outline">{{ count }}</a>
           {% endif %}
         {% endfor %}
         {% if paginator.next_page %}
-            <a href="{{ site.url }}/page{{paginator.next_page}}"  class="btn btn-outline">&raquo;</a>
+            <!--<a href="/blog-page{{paginator.next_page}}"  class="btn btn-outline">&raquo;</a>-->
+			<a href="{{ site.paginate_path | replace: ':num', paginator.next_page }}" class="btn btn-outline">&raquo;</a>
         {% else %}
             <button disabled="disabled" href="javascript:;" class="btn btn-outline">&raquo;</button>
         {% endif %}

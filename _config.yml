@@ -1,13 +1,14 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl:
+#baseurl: https://comsince.github.io
 url: https://itangqian.github.io
 date_format: "ordinal"
-title: candy
-subtitle: "如果不努力，就会像糖果一样化掉"
-description: "如果不努力，就会像糖果一样化掉"
-keywords: candy
+title: leaf
+subtitle: "学无止境"
+description: "学无止境"
+keywords: leaf
+favicon: /favicon.ico
 timezone: Asia/Chongqing
 encoding: "utf-8"
 side_bar_repo_limit: 5
@@ -15,10 +16,9 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: candy
+author: leaf
 organization: 
 organization_url: 
-github_username: itangqian
 location: Chongqing, China
 email: 
 
@@ -34,17 +34,17 @@ navs:
     href: /categories/
     label: 分类
 
-#   -
-#     href: /archives/
-#     label: 归档
+#  -
+#    href: /wiki/
+#    label: 维基
 
   # -
-  #   href: /wiki/
-  #   label: 维基
-
-  # -
-  #   href: /links/
-  #   label: 链接
+  #   href: /open-source/
+  #   label: 开源
+    
+#  -
+#    href: /links/
+#    label: 链接
 
   -
     href: /about/
@@ -93,43 +93,58 @@ plugins:
 
 repository: itangqian/itangqian.github.io
 
-# # ---------------- #
-# #      Comments    #
-# # ---------------- #
-# # support provider: disqus, gitment, gitalk
+# ---------------- #
+#      Socials     #
+# ---------------- #
+github_username: itangqian
+# douban_username: comsince
+# facebook_username: comsince
+# weibo_username: comsince
+# zhihu_username: comsince
+# twitter_username: comsince
+
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: gittalk
 # comments_provider: gitalk
-# # !!!重要!!! 请修改下面这些信息为你自己申请的
-# # !!!Important!!! Please modify infos below to yours
-# # https://disqus.com
-# disqus:
-#     username: 
-# # https://imsun.net/posts/gitment-introduction/
-# gitment:
-#     owner: mzlogin
-#     repo: blog-comments
-#     oauth:
-#         client_id: d2e1cbbd298958076462
-#         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+# # !!!重要!!! 请修改下面两个用户名为你自己申请的
+# # !!!Important!!! Please modify usernames below to yours
+
 # # https://github.com/gitalk/gitalk#install
 # gitalk:
-#     owner: mzlogin
-#     repo: blog-comments
-#     clientID: d2e1cbbd298958076462
-#     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# # 在使用其它评论组件时可点击显示 Disqus
-# lazy_load_disqus : false
+#     owner: carlos9310
+#     repo: github_pages_comments
+#     clientID: 32cbf0baaa4c7109354d
+#     clientSecret: 3c50229777246501ea06517a030097bc96d30b5a
 
-# # ---------------- #
-# #      Search      #
-# # ---------------- #
-# simple_jekyll_search:
-#     # 是否支持全文搜索
-#     fulltext: false
-#     # 最多显示多少条搜索结果
-#     limit: 10
+# ---------------- #
+#      Search      #
+# ---------------- #
+simple_jekyll_search:
+    # 是否支持全文搜索
+    fulltext: true
+    # 最多显示多少条搜索结果
+    limit: 10
 
 # # ---------------- #
 # #    Analytics     #
 # # ---------------- #
 # google:
-#     analytics_id: UA-80669434-1
+#     analytics_id: UA-92285152-1
+
+# baidu:
+#     siteid: aa7cca56f75b5bd3c2d90ce085a76513        # 百度统计 js 代码后的字符串[注册后获取]
+
+# lean_cloud:
+#     enable: true
+#     app_id: tNrgz0QdwvywCfzrlSIyeYp4-MdYXbMMI
+#     app_key: RMuICf7NkKW2vxksmr7W5b70
+
+
+# # ---------------- #
+# #      Datas       #
+# # ---------------- #
+# skill_software_keywords: [Python, Java, JavaScript, SQL, Design Patterns]
+# skill_update_keywords: [hadoop, spark, flink, sparksql, hive, ELK, ML, DL, NLP]
+

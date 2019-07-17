@@ -1,28 +1,15 @@
 ---
 layout: page
 title: About
-description: candy
-keywords: candy
+description: leaf
+repoistor:
+keywords: comsince
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-candy
-
 ## 联系
 
-{% for website in site.data.social %}
-* {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
-{% endfor %}
-
-## Skill Keywords
-
-{% for category in site.data.skills %}
-### {{ category.name }}
-<div class="btn-inline">
-{% for keyword in category.keywords %}
-<button class="btn btn-outline" type="button">{{ keyword }}</button>
-{% endfor %}
-</div>
-{% endfor %}
+* GitHub：[https://github.com/yejundong](https://github.com/yejundong)
+ 
