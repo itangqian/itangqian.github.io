@@ -11,5 +11,5 @@ permalink: /about/
 
 ## 联系
 
-* GitHub：[https://github.com/yejundong](https://github.com/yejundong)
- 
+* GitHub：[https://github.com/itangqian](https://github.com/itangqian)
+
